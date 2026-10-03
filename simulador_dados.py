@@ -4,6 +4,13 @@ from rich import print  # Para interpretar los objetos de Rich
 from rich.panel import Panel  # Para los menús empaquetados
 from rich.console import Console  # Para limpiar la terminal
 
+D4 = 4
+D6 = 6
+D8 = 8
+D10 = 10
+D12 = 12
+D20 = 20
+
 console = Console()
 
 
@@ -35,19 +42,29 @@ while True:
                     break
 
             if sub_respuesta == "1":
-                pass
+                caras_dado = D4
             elif sub_respuesta == "2":
-                pass
+                caras_dado = D6
             elif sub_respuesta == "3":
-                pass
+                caras_dado = D8
             elif sub_respuesta == "4":
-                pass
+                caras_dado = D10
             elif sub_respuesta == "5":
-                pass
+                caras_dado = D12
             elif sub_respuesta == "6":
-                pass
-            else:
-                raise ValueError("Error inesperado")
+                caras_dado = D20
+            while True:
+                try:
+                    num_dados = int(input(
+                        f"¿Cuántos dados de {caras_dado} lados quieres lanzar?\nIntroduce un número entero positivo: "))
+                    if num_dados <= 0:
+                        print(Panel("[red]No se permite cero o valores negativos",
+                                    box=box.ROUNDED, border_style="red", expand=False))
+                    else:
+                        break
+                except ValueError:
+                    print(Panel("[red]Introduce un número válido",
+                          box=box.ROUNDED, border_style="red", expand=False))
         case "s" | "S":
             console.clear()
             print(Panel("[red]Saliendo del programa...",
