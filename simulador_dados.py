@@ -5,6 +5,7 @@ import random
 import time
 from rich import box  # Estilos de borde para los paneles
 from rich import print  # Para interpretar los objetos de Rich
+from rich.align import Align  # Para alinear textos
 from rich.panel import Panel  # Para los menús empaquetados
 from rich.console import Console  # Para limpiar la terminal
 from rich.live import Live
@@ -26,6 +27,7 @@ while True:
     # Mostrar el menú principal
     contenido = (
         "[bold cyan]1)[/] Lanzar dados\n"
+        "[bold cyan]2)[/] Lanzar dados [yellow]MODO PRO\n"
         "[bold red]S)[/] Salir"
     )
     print(
@@ -109,6 +111,7 @@ while True:
                             expand=False,
                         ),
                     )
+                    continue
                 else:
                     break
             except ValueError:
@@ -120,6 +123,7 @@ while True:
                         expand=False,
                     )
                 )
+                continue
 
         # Animar cada dado y acumular el resultado definitivo
         suma_total = 0
@@ -158,6 +162,22 @@ while True:
         )
 
         input("Pulsa Enter para continuar...")
+
+    elif respuesta == "2":
+        print(
+            Panel(
+                Align.center("[italic][red]Disponible próximamente"),
+                title="Lanzar dado en un renderizado 3D",
+                padding=(5, 5),
+                box=box.ROUNDED,
+                border_style="bold yellow",
+                expand=True,
+                width=80,
+
+            )
+        )
+        input("Pulsa Enter para continuar...")
+        pass
 
     elif respuesta == "s" or respuesta == "S":
         console.clear()
