@@ -2,6 +2,16 @@
 
 Aplicación de consola en Python para lanzar dados de distintos tipos con una animación y resultados coloreados mediante Rich.
 
+<p align="center">
+  <a href="assets/demostracion.mp4">
+    <img src="assets/demostracion.jpg" alt="Demostración del simulador de dados en la terminal del IDE" width="720">
+  </a>
+</p>
+<p align="center">
+  <a href="assets/demostracion.mp4"><strong>▶ Ver vídeo de demostración</strong></a><br>
+  <sub>Duración: 1 min 55 s · Formato MP4</sub>
+</p>
+
 ## Requisitos
 
 - Python 3.8 o superior
